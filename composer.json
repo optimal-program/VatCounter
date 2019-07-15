@@ -1,0 +1,23 @@
+{
+  "name": "optimal/vat-counter",
+  "description": "Simple VAT calculator for Czech legislation (DPH).",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "vat",
+    "dph",
+    "calculator",
+    "czech"
+  ],
+  "authors": [
+    {
+      "name": "Jan Jindra",
+      "email": "jindra@optimal-program.cz"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Optimal\\VatCounter\\": "src/"
+    }
+  }
+}
