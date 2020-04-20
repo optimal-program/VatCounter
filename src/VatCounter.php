@@ -35,13 +35,13 @@ class VatCounter
     protected $round = 2;
 
     /**
-     * Set price with vat
-     * @param float $price
-     * @param int $vat
-     * @param int $count
+     * @param $price
+     * @param float $vat
+     * @param float $count
+     * @param bool $oldPattern
      */
-    public function setPriceWithVat($price, $vat, $count = 1, $oldPattern = false)
-    {
+    public function setPriceWithVat($price, $vat, $count = 1.0, $oldPattern = false)
+    { 
         $price = round($price / $this->rate, $this->round);
         $this->coef = ($vat / (100 + $vat)); // od 1. 4. 2019 se nezaokrouhluje na 4. desetiná místa
         if ($oldPattern) {
@@ -67,10 +67,10 @@ class VatCounter
     /**
      * Set price without vat
      * @param float $price
-     * @param int $vat
-     * @param int $count
+     * @param float $vat
+     * @param float $count
      */
-    public function setPriceWithoutVat($price, $vat, $count = 1)
+    public function setPriceWithoutVat($price, $vat, $count = 1.0)
     {
         $price = round($price / $this->rate, $this->round);
 
